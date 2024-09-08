@@ -18,5 +18,5 @@ export const getProducts = () => {
 };
 
 export const getProductById = (productId) => {
-  return products.finf((product) => product.id === productId);
+  return products.find((product) => product.id === productId);
 };
