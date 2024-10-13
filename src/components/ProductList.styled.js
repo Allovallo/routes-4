@@ -6,9 +6,9 @@ export const Container = styled.div`
   gap: 16px;
 `;
 
-export const CardWrapper = styled.diz`
+export const CardWrapper = styled.div`
   border: 1px solid black;
-  background-repeat: 4px;
+  border-radius: 4px;
 
   > a {
     text-decoration: none;
