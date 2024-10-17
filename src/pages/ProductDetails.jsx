@@ -1,5 +1,4 @@
-import { useLocation } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { getProductById } from '../fakeAPI';
 import { BackLink } from '../components/BackLink';
 
