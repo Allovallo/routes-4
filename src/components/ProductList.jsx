@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
+import { Container, CardWrapper, ProductName } from './ProductList.styled';
 
 export const ProductList = ({ products }) => {
   return (
-    <div>
+    <Container>
       {products.map(product => (
-        <div key={product.id}>
+        <CardWrapper key={product.id}>
           <Link to={`${product.id}`}>
             <img src="https://via.placeholder.com/200x100" alt="" />
-            <h3>{product.name}</h3>
+            <ProductName>{product.name}</ProductName>
           </Link>
-        </div>
+        </CardWrapper>
       ))}
-    </div>
+    </Container>
   );
 };
