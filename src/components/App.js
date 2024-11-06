@@ -1,22 +1,33 @@
-// import { Route, Router } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { About } from '../pages/About';
+import { Home } from '../pages/Home';
+import { Products } from '../pages/Products';
+
+import { Container, Header, Logo, Link } from './App.styled';
 
 export const App = () => {
   return (
-    <div>
-      <header>
-        <p>
+    <Container>
+      <Header>
+        <Logo>
           <span role="img" aria-label="computer icon">
             💻
           </span>
           GoMerch Store
-        </p>
+        </Logo>
         <nav>
-          <NavLink>Home</NavLink>
-          <NavLink>About</NavLink>
-          <NavLink>Product</NavLink>
+          <Link to="/" end>
+            Home
+          </Link>
+          <Link to="/about">About</Link>
+          <Link to="/products">Products</Link>
         </nav>
-      </header>
-    </div>
+      </Header>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/products" element={<Products />}></Route>
+      </Routes>
+    </Container>
   );
 };
