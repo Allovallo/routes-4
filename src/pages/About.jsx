@@ -1,3 +1,5 @@
+import { Link, Outlet } from 'react-router-dom';
+
 export const About = () => {
   return (
     <main>
@@ -10,6 +12,18 @@ export const About = () => {
         tenetur aliquid, libero provident! Voluptatum mollitia eaque optio error blanditiis
         molestiae.
       </p>
+      <ul>
+        <li>
+          <Link to="mission">Read about our mission</Link>
+        </li>
+        <li>
+          <Link to="team">Get to know about the team</Link>
+        </li>
+        <li>
+          <Link to="reviews">Go thru the reviews</Link>
+        </li>
+      </ul>
+      <Outlet />
     </main>
   );
 };
