@@ -6,29 +6,13 @@ import { Mission } from './Mission';
 import { Team } from './Team';
 import { Reviews } from './Reviews';
 import { ProductDetails } from '../pages/ProductDetails';
-
-import { Container, Header, Logo, Link } from './App.styled';
+import { SharedLayout } from '../components/SharedLayout';
 
 export const App = () => {
   return (
-    <Container>
-      <Header>
-        <Logo>
-          <span role="img" aria-label="computer icon">
-            💻
-          </span>
-          GoMerch Store
-        </Logo>
-        <nav>
-          <Link to="/" end>
-            Home
-          </Link>
-          <Link to="/about">About</Link>
-          <Link to="/products">Products</Link>
-        </nav>
-      </Header>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />}></Route>
         <Route path="/about" element={<About />}>
           <Route path="mission" element={<Mission />}></Route>
           <Route path="team" element={<Team />}></Route>
@@ -36,7 +20,7 @@ export const App = () => {
         </Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/products/:id" element={<ProductDetails />}></Route>
-      </Routes>
-    </Container>
+      </Route>
+    </Routes>
   );
 };
